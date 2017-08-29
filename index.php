@@ -25,9 +25,9 @@
 
 		$response = new \stdClass();
 
-		$response->speech = "";
+		$response->speech = "You can ask me something";
 
-		$response->displayText = "";
+		$response->displayText = "You can ask me something";
 
 		$response->source = "webhook";
 
