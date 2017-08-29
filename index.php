@@ -5,9 +5,9 @@
 		$requestBody = file_get_contents('php://input');
 		$json = json_decode($requestBody);
 
-		$text = $json->result->parameters->text;
+		$date_period = $json->result->parameters->date_period;
 
-		switch ($text) {
+		/*switch ($text) {
 			case 'hi':
 				$speech = "Howdy, good to meet you";
 				break;
@@ -21,7 +21,15 @@
 			default:
 				$speech = "I don't really understand everything you ask me but i'm learning more";
 				break;
-		}
+		}*/
+		$year = substr($date_period,0,4);
+		$born_year = (int)$year;
+		
+		$now = date("Y");
+
+		$age = $now - $born_year;
+
+		$speech = "you are ". $age . "years old";
 
 		$response = new \stdClass();
 
